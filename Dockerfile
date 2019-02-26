@@ -1,7 +1,5 @@
 FROM ubuntu:16.04
 
-LABEL maintainer="Bo-Yi Wu <appleboy.tw@gmail.com>"
-
 ENV FLUTTER_HOME ${HOME}/flutter
 ENV FLUTTER_VERSION 1.0.0-stable
 
@@ -13,5 +11,7 @@ RUN wget https://storage.googleapis.com/flutter_infra/releases/stable/linux/flut
 RUN cd ${HOME} & tar xf /flutter_linux_v1.0.0-stable.tar.xz
 
 ENV PATH ${PATH}:${FLUTTER_HOME}/bin
+
+RUN flutter doctor
 
 WORKDIR /
